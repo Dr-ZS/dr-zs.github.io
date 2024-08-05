@@ -10,17 +10,28 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Check out the repository
+        uses: actions/checkout@v3
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '2.7'
+
       - name: Install Bundler
         run: gem install bundler:2.5.17
+
+      - name: Debug: Check installed Ruby and Bundler versions
+        run: |
+          ruby -v
+          bundler -v
+
       - name: Install dependencies
         run: bundle install
+
       - name: Build site
         run: bundle exec jekyll build
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
