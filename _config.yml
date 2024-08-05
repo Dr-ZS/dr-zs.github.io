@@ -14,9 +14,6 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# Enable GitHub Pages
-github: [username]
-
 # Minimal Mistakes settings
 author:
   name: Your Name
