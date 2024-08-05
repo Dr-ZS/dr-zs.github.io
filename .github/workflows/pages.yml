@@ -18,11 +18,10 @@ jobs:
         with:
           ruby-version: '2.7'
 
-      - name: Install Bundler
-        run: gem install bundler:2.5.17
-
       - name: Install dependencies
-        run: bundle install
+        run: |
+          gem install bundler:2.5.17
+          bundle install
 
       - name: Build site
         run: bundle exec jekyll build
