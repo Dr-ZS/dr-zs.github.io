@@ -21,11 +21,6 @@ jobs:
       - name: Install Bundler
         run: gem install bundler:2.5.17
 
-      - name: Debug: Check installed Ruby and Bundler versions
-        run: |
-          ruby -v
-          bundler -v
-
       - name: Install dependencies
         run: bundle install
 
